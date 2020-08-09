@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="ihd_usb_js_scrape",
-    version="0.0.1",
+    version="0.0.2",
     author="David Kent",
     author_email="davidkent@fastmail.com.au",
     description="Scrapes data from the USB mounted JS from an in home energy display",

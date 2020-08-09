@@ -81,7 +81,10 @@ def display(mount_point):
 
 def cycle_device(mount_point):
     import subprocess, time
-    subprocess.check_call(["sudo", "ihd_power_cycle_usb.sh", mount_point])
+    # this is gross - assume in same path as python - fine in a venv..
+    script_dir = os.path.dirname(sys.executable)
+    script_path = os.path.join(script_dir, 'ihd_power_cycle_usb.sh')
+    subprocess.check_call(["sudo", script_path, mount_point])
     # allow time to reconnect
     time.sleep(15)
 
